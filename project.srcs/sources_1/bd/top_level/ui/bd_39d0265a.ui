@@ -1,0 +1,51 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-554,-570",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port UART -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD -left
+preplace port port-id_CLK100MHZ -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD
+preplace port port-id_CPU_RESETN -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
+preplace inst source_50mhz -pg 1 -lvl 1 -x 140 -y 190 -defaultsOSRD -pinDir clk_in left -pinY clk_in 0L -pinDir resetn_in left -pinY resetn_in 20L -pinDir sys_clk right -pinY sys_clk 0R -pinBusDir sys_resetn right -pinBusY sys_resetn 20R
+preplace inst uart_axi_bridge -pg 1 -lvl 2 -x 400 -y 130 -defaultsOSRD -pinDir UART left -pinY UART 0L -pinDir M_AXI right -pinY M_AXI 0R -pinDir s_axi_aclk left -pinY s_axi_aclk 20L -pinDir s_axi_aresetn left -pinY s_axi_aresetn 40L
+preplace inst system_interconnect -pg 1 -lvl 3 -x 680 -y 60 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 40 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 20 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61} -defaultsOSRD -pinDir S00_AXI left -pinY S00_AXI 70L -pinDir M00_AXI right -pinY M00_AXI 180R -pinDir M01_AXI right -pinY M01_AXI 0R -pinDir aclk left -pinY aclk 160L -pinDir aresetn left -pinY aresetn 180L
+preplace inst axi_revision -pg 1 -lvl 4 -x 960 -y 240 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir AXI_ACLK left -pinY AXI_ACLK 20L -pinDir AXI_ARESETN left -pinY AXI_ARESETN 40L
+preplace inst system_ila -pg 1 -lvl 6 -x 1510 -y 60 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 45 44} -defaultsOSRD -pinDir SLOT_0_AXI left -pinY SLOT_0_AXI 0L -pinDir SLOT_1_AXIS right -pinY SLOT_1_AXIS 40R -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 20L
+preplace inst writer -pg 1 -lvl 5 -x 1210 -y 60 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 38 39 36 37} -defaultsOSRD -pinDir M_AXI right -pinY M_AXI 0R -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 60L -pinDir start left -pinY start 0L -pinDir clear left -pinY clear 20L
+preplace inst axi_control -pg 1 -lvl 4 -x 960 -y 60 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinDir start_write right -pinY start_write 0R -pinDir clear right -pinY clear 20R
+preplace inst data_consumer -pg 1 -lvl 7 -x 1760 -y 140 -swap {0 1 2 3 4 5 7 6} -defaultsOSRD -pinDir AXIS_RX left -pinY AXIS_RX 0L -pinDir clk left -pinY clk 180L -pinDir resetn left -pinY resetn 20L
+preplace inst aximm_to_axis -pg 1 -lvl 6 -x 1510 -y 220 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 43 42} -defaultsOSRD -pinDir AXIS_OUT right -pinY AXIS_OUT 0R -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 20L
+preplace netloc axi_control_clear 1 4 1 N 80
+preplace netloc axi_control_start_write 1 4 1 N 60
+preplace netloc clk_in1_0_1 1 0 1 NJ 190
+preplace netloc ext_reset_in_0_1 1 0 1 NJ 210
+preplace netloc source_100mhz_sys_clk 1 1 6 280 220 540 300 820 160 1080 200 1320 320 N
+preplace netloc source_100mhz_sys_resetn 1 1 6 260 240 520 320 840 180 1100 180 1360 160 N
+preplace netloc axi_uartlite_UART 1 0 2 NJ 130 NJ
+preplace netloc aximm_to_axis_AXIS_OUT 1 6 1 1650 100n
+preplace netloc system_interconnect_M00_AXI 1 3 1 N 240
+preplace netloc system_interconnect_M01_AXI 1 3 1 N 60
+preplace netloc uart_axi_bridge_M_AXI 1 2 1 N 130
+preplace netloc writer_M_AXI 1 5 1 1340 60n
+levelinfo -pg 1 0 140 400 680 960 1210 1510 1760 1870
+pagesize -pg 1 -db -bbox -sgen -150 0 1870 380
+",
+   "No Loops_ScaleFactor":"0.663205",
+   "No Loops_TopLeft":"-142,-401",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port port-id_CLK100MHZ -pg 1 -lvl 0 -x -10 -y -200 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -x 120 -y -200 -defaultsOSRD
+preplace netloc clk_in1_0_1 1 0 1 N -200
+levelinfo -pg 1 -10 120 240
+pagesize -pg 1 -db -bbox -sgen -150 -270 240 140
+"
+}
+{
+   "da_axi4_cnt":"4",
+   "da_bram_cntlr_cnt":"1"
+}
