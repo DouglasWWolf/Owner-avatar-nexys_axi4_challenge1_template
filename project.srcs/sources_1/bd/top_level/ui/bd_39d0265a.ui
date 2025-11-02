@@ -16,9 +16,9 @@ preplace inst system_interconnect -pg 1 -lvl 3 -x 680 -y 60 -swap {0 1 2 3 4 5 6
 preplace inst axi_revision -pg 1 -lvl 4 -x 960 -y 240 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir AXI_ACLK left -pinY AXI_ACLK 20L -pinDir AXI_ARESETN left -pinY AXI_ARESETN 40L
 preplace inst system_ila -pg 1 -lvl 6 -x 1510 -y 60 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 45 44} -defaultsOSRD -pinDir SLOT_0_AXI left -pinY SLOT_0_AXI 0L -pinDir SLOT_1_AXIS right -pinY SLOT_1_AXIS 40R -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 20L
 preplace inst writer -pg 1 -lvl 5 -x 1210 -y 60 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 38 39 36 37} -defaultsOSRD -pinDir M_AXI right -pinY M_AXI 0R -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 60L -pinDir start left -pinY start 0L -pinDir clear left -pinY clear 20L
-preplace inst axi_control -pg 1 -lvl 4 -x 960 -y 60 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinDir start_write right -pinY start_write 0R -pinDir clear right -pinY clear 20R
 preplace inst data_consumer -pg 1 -lvl 7 -x 1760 -y 140 -swap {0 1 2 3 4 5 7 6} -defaultsOSRD -pinDir AXIS_RX left -pinY AXIS_RX 0L -pinDir clk left -pinY clk 180L -pinDir resetn left -pinY resetn 20L
 preplace inst aximm_to_axis -pg 1 -lvl 6 -x 1510 -y 220 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 43 42} -defaultsOSRD -pinDir AXIS_OUT right -pinY AXIS_OUT 0R -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 20L
+preplace inst axi_control -pg 1 -lvl 4 -x 960 -y 60 -defaultsOSRD -pinDir S_AXI left -pinY S_AXI 0L -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinDir start_write right -pinY start_write 0R -pinDir clear right -pinY clear 20R
 preplace netloc axi_control_clear 1 4 1 N 80
 preplace netloc axi_control_start_write 1 4 1 N 60
 preplace netloc clk_in1_0_1 1 0 1 NJ 190
